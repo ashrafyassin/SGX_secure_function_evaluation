@@ -33,5 +33,5 @@ Build
 Run  
 -----------------------------------------
   ```
-    $ ./alice/alice ../data/alice_data & ./bob/bob ../data/bob_data 
+    $ ./alice/alice <ALICE_DATA_FILE> & ./bob/bob <BOB_DATA_FILE> 
   ```
