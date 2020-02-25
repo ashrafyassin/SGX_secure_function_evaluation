@@ -1,0 +1,47 @@
+/* enclave.edl - Top EDL file. */
+
+enclave {
+    
+    /* 
+     * ocall_enclave_sample - invokes OCALL to display string buffer inside the enclave.
+     *  [in]: copy the string buffer to App outside.
+     *  [string]: specifies 'str' is a NULL terminated buffer.
+     */
+    untrusted {
+        void ocall_printf([in, string] const char *str);
+        
+        int ocall_get_file_size([in, string] const char *file_name);
+
+        int ocall_remove_shared_file([in, string] const char *file_name);
+        
+        int ocall_save_file_data(
+            [in, string] const char* file_name, [in, size=len] const uint8_t* data,
+            size_t len);
+
+        int ocall_load_file_data(
+            [in, string] const char* file_name, [out, size=len] uint8_t* data,
+            size_t len);
+
+        int ocall_wait_for_ready_file([in, string] const char* file_name);
+
+        int ocall_read_line_data([in, string] const char* file_name,
+            [out, size=len] int* a, [out, size=len] int* b, size_t len);
+         
+        int ocall_function_res(int avg);  
+         
+            
+    };
+
+    trusted {
+            public int ecall_init_signing_keys([in, string] const char* str1,
+                [in, string] const char* str2, [in, string] const char* str3);
+            public int ecall_create_DH_keys([in, string] const char* my_file,
+                [in, string] const char* other_key_file);
+            public int ecall_process_clients_file([in, string] const char* file_name, size_t len);
+            public int ecall_encrypt_clients_data([in, string] const char* file_name);
+            public int ecall_decrypt_and_process_file([in, string] const char* file_name);
+            public int ecall_calc_function();            
+
+    };
+};
+
