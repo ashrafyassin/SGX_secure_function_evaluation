@@ -12,12 +12,6 @@ Implementation
 - For demonstration we used two applications, Alice and Bob respectively, each application has it's own enclave, that communicates with it's application using Ecalls and Ocalls, and for applications IPC we currently using files. 
 - More detailed implementaion [pdf](https://github.com/ashrafyassin/SGX_secure_function_evaluation/blob/master/secure_function_evaluation-SGX.pdf)
 
-TODO
--------------
-- currently application exists on the same machine, we wish to be aple to run them on separte machines, to this we need to change their IPC to sockets.
-- For more secure protocol one should use local attestation, to asure the integrity of the other enclave.
-- Or remote attestation if applications were in a separate machines.
-
 Documentation
 -------------
 - See [Developer Reference](https://01.org/sites/default/files/documentation/intel_sgx_sdk_developer_reference_for_linux_os_pdf.pdf) for more about Intel SGX SDK
@@ -58,3 +52,8 @@ testing
     $ (cd Tests && python test_generator.py)
     $ diff <(sort Tests/expected_out) <(sort out)
   ```
+
+TODO
+-------------
+- currently applications exists on the same machine, we wish to be aple to run them on separte machines, to do this we need to change their IPC to sockets.
+- For more secure protocol one should use local attestation, to asure the integrity of the other enclave, Or remote attestation if applications were in a separate machines.
