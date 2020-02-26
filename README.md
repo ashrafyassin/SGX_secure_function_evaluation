@@ -21,11 +21,15 @@ Build
 -----------------------------------------
   * with Intel SGX Hardware	- build in hardware-debug mode
   ```
-    $ (cd enclave && make SGX_DEBUG=1 SGX_MODE=HW) && (cd bob && make SGX_DEBUG=1 SGX_MODE=HW) && (cd alice && make SGX_DEBUG=1 SGX_MODE=HW)
+    $ (cd enclave && make SGX_DEBUG=1 SGX_MODE=HW)
+    $ (cd bob && make SGX_DEBUG=1 SGX_MODE=HW)
+    $ (cd alice && make SGX_DEBUG=1 SGX_MODE=HW)
   ```
   * without Intel SGX Hardware - build in simulator-debug mode
   ```
-    $ (cd enclave && make SGX_DEBUG=1) && (cd bob && make SGX_DEBUG=1) && (cd alice && make SGX_DEBUG=1)
+    $ (cd enclave && make SGX_DEBUG=1)
+    $ (cd bob && make SGX_DEBUG=1)
+    $ (cd alice && make SGX_DEBUG=1)
   ```
 
 Run  
@@ -38,6 +42,7 @@ Run
 testing 
 -----------------------------------------
   ```
-    $ (./alice/alice ../Tests/alice_data & ./bob/bob ../Tests/bob_data) > /Tests/out
-    $ (cd Tests && python test_generator.py && diff <(sort expected_out) <(sort out))
+    $ (./alice/alice ../Tests/alice_data & ./bob/bob ../Tests/bob_data) > out
+    $ (cd Tests && python test_generator.py)
+    $ diff <(sort Tests/expected_out) <(sort out)
   ```
