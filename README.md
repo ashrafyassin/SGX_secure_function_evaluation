@@ -7,7 +7,7 @@ Introduction
 - This code aims to solve the secure function evaluation problem (see the Documentaion),for example users Alice and Bob each has his private input Xa and Xb respectively, and they wish to evaluate Fun(Xa,Xb) without revealing to the other side its private data.
 - To do this we provided trusted execution environment for each user using Intel SGX enclaves.
 
-implementation  
+Implementation  
 ------------
 - For demonstration we used two applications, Alice and Bob respectively, each application has it's own enclave, that communicates with it's application using Ecalls and Ocalls, and for applications IPC we currently using files. 
 - More detailed implementaion [pdf](https://github.com/ashrafyassin/SGX_secure_function_evaluation/blob/master/secure_function_evaluation-SGX.pdf)
