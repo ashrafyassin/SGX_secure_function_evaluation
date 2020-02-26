@@ -33,3 +33,11 @@ Run
   ```
     $ ./alice/alice <ALICE_DATA_FILE> & ./bob/bob <BOB_DATA_FILE> 
   ```
+
+
+testing 
+-----------------------------------------
+  ```
+    $ (./alice/alice ../Tests/alice_data & ./bob/bob ../Tests/bob_data) > /Tests/out
+    $ (cd Tests && python test_generator.py && diff <(sort expected_out) <(sort out))
+  ```
