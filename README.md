@@ -4,7 +4,19 @@ Secure function Evaluation - With Intel SGX
 
 Introduction
 ------------
+- This code aims to solve the secure function evaluation problem (see the Documentaion),for example users Alice and Bob each has his private input Xa and Xb respectively, and they wish to evaluate Fun(Xa,Xb) without revealing to the other side its private data.
+- To do this we provided trusted execution environment for each user using Intel SGX enclaves.
+
+implementation  
+------------
+-for demonstration we used two applications, Alice and Bob respectively, each application has it's own enclave, that communicates with it's application using Ecalls and Ocalls, and for applications IPC we currently using files. 
+-for more detailed implementaion refere to the included [pdf]()
+
 TODO
+-------------
+-currently application exists on the same machine, we wish to be aple to run them on separte machines, to this we need to change their IPC to sockets.
+-for more secure protocol one should use local attestation, to asure the integrity of the other enclave.
+-Or remote attestation if applications were in a separate machines.
 
 Documentation
 -------------
