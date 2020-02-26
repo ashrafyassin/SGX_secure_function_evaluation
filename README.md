@@ -19,11 +19,11 @@ Documentation
 
 Build  
 -----------------------------------------
-  * with Intel SGX Hardware	- build in HW Mode
+  * with Intel SGX Hardware	- build in hardware-debug mode
   ```
     $ (cd enclave && make SGX_DEBUG=1 SGX_MODE=HW) && (cd bob && make SGX_DEBUG=1 SGX_MODE=HW) && (cd alice && make SGX_DEBUG=1 SGX_MODE=HW)
   ```
-  * in simulate Mode
+  * without Intel SGX Hardware - build in simulator mode
   ```
     $ (cd enclave && make SGX_DEBUG=1) && (cd bob && make SGX_DEBUG=1) && (cd alice && make SGX_DEBUG=1)
   ```
