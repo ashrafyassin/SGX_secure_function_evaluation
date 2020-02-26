@@ -9,13 +9,13 @@ Introduction
 
 implementation  
 ------------
-- for demonstration we used two applications, Alice and Bob respectively, each application has it's own enclave, that communicates with it's application using Ecalls and Ocalls, and for applications IPC we currently using files. 
-- for more detailed implementaion refere to the included [pdf](https://github.com/ashrafyassin/SGX_secure_function_evaluation/blob/master/secure_function_evaluation-SGX.pdf)
+- For demonstration we used two applications, Alice and Bob respectively, each application has it's own enclave, that communicates with it's application using Ecalls and Ocalls, and for applications IPC we currently using files. 
+- More detailed implementaion [pdf](https://github.com/ashrafyassin/SGX_secure_function_evaluation/blob/master/secure_function_evaluation-SGX.pdf)
 
 TODO
 -------------
 - currently application exists on the same machine, we wish to be aple to run them on separte machines, to this we need to change their IPC to sockets.
-- for more secure protocol one should use local attestation, to asure the integrity of the other enclave.
+- For more secure protocol one should use local attestation, to asure the integrity of the other enclave.
 - Or remote attestation if applications were in a separate machines.
 
 Documentation
