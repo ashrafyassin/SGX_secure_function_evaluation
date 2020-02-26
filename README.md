@@ -57,3 +57,4 @@ TODO
 -------------
 - currently applications exists on the same machine, we wish to be aple to run them on separte machines, to do this we need to change their IPC to sockets.
 - For more secure protocol one should use local attestation, to asure the integrity of the other enclave, Or remote attestation if applications were in a separate machines.
+- Add error codes.
